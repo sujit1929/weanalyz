@@ -57,7 +57,7 @@ export default function UserProfile() {
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">User Profile</h2>
 
             <div className="bg-[#55D6C2] min-h-[65vh] p-4 sm:p-6 md:px-12 md:py-8 rounded-md">
-              <div className="flex flex-col lg:flex-row gap-6 xl:gap-12 xl:max-w-xl mx-auto">
+              <div className="flex flex-col lg:flex-row gap-6 xl:gap-12 xl:max-w-3xl mx-auto">
                 {/* Profile Card */}
                 <div className="bg-[#F2F5FF] w-full lg:w-[55%] rounded-lg shadow-lg relative">
                   <IconFilePencil color="#000" className="absolute top-3 right-3" size={24} />
