@@ -104,7 +104,7 @@ export default function UserProfile() {
             </div>
           </div>
 
-          <footer className="bg-[#55D6C2] text-center text-white py-3 mt-6 lg:mt-0"></footer>
+          <footer className="bg-[#55D6C2] text-center text-white py-4 mt-6 lg:mt-0"></footer>
         </main>
       </div>
     </div>
