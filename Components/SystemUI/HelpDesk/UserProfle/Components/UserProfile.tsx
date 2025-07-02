@@ -18,7 +18,6 @@ import {
 export default function UserProfile() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 font-serif">
-      {/* Header */}
       <header className="bg-teal-500 text-white px-4 sm:px-6 py-3 flex items-center justify-between">
         <h1 className="text-lg sm:text-xl font-bold">Helpdesk</h1>
         <div className="flex items-center gap-2 sm:gap-3">
@@ -31,10 +30,7 @@ export default function UserProfile() {
           <IconLogout size={18} className="text-black" />
         </div>
       </header>
-
-      {/* Main Content */}
       <div className="flex flex-1 flex-col lg:flex-row">
-        {/* Sidebar */}
         <aside className="w-full lg:w-64 bg-gray-200 p-4 border-r">
           <nav className="text-sm space-y-1">
             <div className="flex items-center gap-2 px-3 py-2 text-gray-700 rounded hover:bg-gray-300 cursor-pointer">
@@ -80,7 +76,6 @@ export default function UserProfile() {
                   </div>
                 </div>
 
-                {/* Feedback Card */}
                 <div className="bg-[#F2F5FF] w-full lg:w-[45%]  rounded-lg shadow-lg h-full">
                   <div className="p-6 sm:px-10">
                     <h3 className="font-semibold text-gray-800 text-center text-sm mb-2">Give Your Feedback</h3>
