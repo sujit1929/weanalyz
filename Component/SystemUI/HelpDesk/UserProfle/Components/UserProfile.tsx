@@ -17,7 +17,7 @@ import {
 
 export default function UserProfile() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-gray-100 font-serif">
       {/* Header */}
       <header className="bg-teal-500 text-white px-4 sm:px-6 py-3 flex items-center justify-between">
         <h1 className="text-lg sm:text-xl font-bold">Helpdesk</h1>
@@ -71,11 +71,11 @@ export default function UserProfile() {
                         <IconUserFilled color="#000" size={50} />
                       </div>
                     </div>
-                    <div className="text-gray-700 text-sm space-y-2">
-                      <div className="font-bold">Username</div>
-                      <div className="font-bold">Contact Number</div>
-                      <div className="font-bold">Email</div>
-                      <div className="font-bold">Department</div>
+                    <div className="text-black text-sm ">
+                      <div>Username</div>
+                      <div>Contact Number</div>
+                      <div>Email</div>
+                      <div>Department</div>
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export default function UserProfile() {
                     <p className="bg-gray-300 text-gray-800 text-xs mb-3 pt-2 pb-3 px-2">
                       [Lorem ipsum]
                     </p>
-                    <div className="flex justify-center mb-4">
+                    <div className="flex justify-center mb-2">
                       <IconStarFilled size={16} className="text-gray-300" />
                       <IconStarFilled size={16} className="text-gray-300" />
                       <IconStarFilled size={16} className="text-gray-300" />
