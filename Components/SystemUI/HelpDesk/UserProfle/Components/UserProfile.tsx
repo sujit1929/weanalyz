@@ -18,7 +18,7 @@ import {
 export default function UserProfile() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 font-serif">
-      <header className="bg-teal-500 text-white px-4 sm:px-6 py-3 flex items-center justify-between">
+      <header className="bg-[#55D6C2] text-white px-4 sm:px-6 py-3 flex items-center justify-between">
         <h1 className="text-lg sm:text-xl font-bold">Helpdesk</h1>
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="flex rounded-md overflow-hidden border border-black ">

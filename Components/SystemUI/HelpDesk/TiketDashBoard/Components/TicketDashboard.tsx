@@ -43,9 +43,8 @@ const getPriorityColor = (priority : string) => {
 
 export default function HelpdeskDashboard() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-teal-500 text-white px-6 py-3 flex items-center justify-between">
+    <div className=" bg-gray-50">
+      <header className="bg-[#55D6C2] text-white px-6 py-3 flex items-center justify-between">
         <h1 className="text-xl font-semibold">Helpdesk</h1>
         <div className="flex items-center gap-3">
           <button className="text-white hover:bg-teal-600 px-2 py-1 rounded">EN</button>
@@ -56,7 +55,7 @@ export default function HelpdeskDashboard() {
       </header>
 
       <div className="flex">
-        {/* Sidebar */}
+   
         <aside className="w-64 bg-gray-100 min-h-screen p-4">
           <nav className="space-y-2">
             {['Dashboard', 'Ticket Approval', 'My Ticket', 'Performance'].map((item, idx) => (
@@ -68,7 +67,7 @@ export default function HelpdeskDashboard() {
           </nav>
         </aside>
 
-        {/* Main */}
+      
         <main className="flex-1 p-6">
           <div className="bg-white rounded-lg shadow-sm">
             <div className="p-6 border-b">
@@ -132,7 +131,7 @@ export default function HelpdeskDashboard() {
                 <button className="border rounded px-2 py-1" disabled>
                   <ChevronLeft className="w-4 h-4" />
                 </button>
-                <button className="border rounded px-3 py-1 bg-teal-500 text-white">1</button>
+                <button className="border rounded px-3 py-1 bg-[#55D6C2] text-white">1</button>
                 <button className="border rounded px-2 py-1" disabled>
                   <ChevronRight className="w-4 h-4" />
                 </button>
