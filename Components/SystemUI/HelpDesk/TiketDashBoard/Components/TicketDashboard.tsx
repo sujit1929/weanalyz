@@ -17,6 +17,7 @@ const tickets = [
   { id: "1244", subject: "Ticket submission", category: "Ticketing", priority: "High", date: "14/08/21", status: "In Progress", assignee: "Anna" },
   { id: "1114", subject: "Login issue", category: "Access issue", priority: "High", date: "3/08/21", status: "In Progress", assignee: "Tom" },
 ]
+
 const menuItems = [
   "Dashboard",
   "Ticket Approval",
@@ -24,8 +25,8 @@ const menuItems = [
   "Performance",
 ]
 
-const getStatusBadge = (status : string) => {
-  let base = "inline-block px-2 py-1 rounded text-xs font-medium"
+const getStatusBadge = (status: string) => {
+  const base = "inline-block px-2 py-1 rounded text-xs font-medium" // ✅ changed `let` to `const`
   switch (status) {
     case "In Progress":
       return <span className={`${base} bg-green-100 text-green-800`}>In Progress</span>
@@ -38,7 +39,7 @@ const getStatusBadge = (status : string) => {
   }
 }
 
-const getPriorityColor = (priority : string) => {
+const getPriorityColor = (priority: string) => {
   switch (priority) {
     case "High": return "text-red-600"
     case "Medium": return "text-orange-600"
@@ -49,7 +50,7 @@ const getPriorityColor = (priority : string) => {
 
 export default function HelpdeskDashboard() {
   return (
-    <div className=" bg-gray-50">
+    <div className="bg-gray-50">
       <header className="bg-[#55D6C2] text-white px-6 py-3 flex items-center justify-between">
         <h1 className="text-xl font-semibold">Helpdesk</h1>
         <div className="flex items-center gap-3">
@@ -61,10 +62,10 @@ export default function HelpdeskDashboard() {
       </header>
 
       <div className="flex">
-   
         <aside className="w-64 bg-gray-100 min-h-screen p-4">
           <nav className="space-y-2">
-            {menuItems.map((item, idx) => (
+            {/* ✅ removed unused `idx` */}
+            {menuItems.map((item) => (
               <div key={item} className={`flex items-center gap-3 px-3 py-2 rounded ${item === 'My Ticket' ? 'bg-gray-200 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-200'}`}>
                 <div className={`w-4 h-4 rounded-sm ${item === 'My Ticket' ? 'bg-gray-600' : 'bg-gray-400'}`}></div>
                 <span>{item}</span>
@@ -73,7 +74,6 @@ export default function HelpdeskDashboard() {
           </nav>
         </aside>
 
-      
         <main className="flex-1 p-6">
           <div className="bg-white rounded-lg shadow-sm">
             <div className="p-6 border-b">
@@ -95,7 +95,6 @@ export default function HelpdeskDashboard() {
               </div>
             </div>
 
-            {/* Table */}
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-gray-100 text-left">

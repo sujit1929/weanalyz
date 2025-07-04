@@ -8,7 +8,6 @@ import {
 } from "@tabler/icons-react"
 import {
   User,
-  LayoutDashboard,
   CheckSquare,
   Ticket,
   TrendingUp,

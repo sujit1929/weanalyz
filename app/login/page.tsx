@@ -1,16 +1,20 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import axios from "axios"
 import { Loader2 } from "lucide-react"
-import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "@/Components/ui/card"
+import {jwtDecode }from "jwt-decode"
+
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/Components/ui/card"
 import { Input } from "@/Components/ui/input"
 import { Button } from "@/Components/ui/button"
 import { Label } from "@/Components/ui/label"
 import { Alert, AlertDescription } from "@/Components/ui/alert"
+
+type JWTToken = {
+  exp: number
+}
 
 export default function LoginPage() {
   const router = useRouter()
@@ -22,7 +26,17 @@ export default function LoginPage() {
   useEffect(() => {
     const token = localStorage.getItem("token")
     if (token) {
-      router.replace("/dashboard")
+      try {
+        const decoded = jwtDecode<JWTToken>(token)
+        const isExpired = decoded.exp * 1000 < Date.now()
+        if (isExpired) {
+          localStorage.removeItem("token")
+        } else {
+          router.replace("/") // Already logged in
+        }
+      } catch {
+        localStorage.removeItem("token") // Invalid token
+      }
     }
   }, [router])
 
@@ -36,10 +50,15 @@ export default function LoginPage() {
         phone,
         password,
       })
+
       localStorage.setItem("token", res.data.token)
       router.push("/")
-    } catch (err: any) {
-      setError(err?.response?.data?.error || "Login failed")
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || "Login failed")
+      } else {
+        setError("Login failed")
+      }
     } finally {
       setIsLoading(false)
     }
