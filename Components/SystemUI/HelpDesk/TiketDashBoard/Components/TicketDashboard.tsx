@@ -17,6 +17,12 @@ const tickets = [
   { id: "1244", subject: "Ticket submission", category: "Ticketing", priority: "High", date: "14/08/21", status: "In Progress", assignee: "Anna" },
   { id: "1114", subject: "Login issue", category: "Access issue", priority: "High", date: "3/08/21", status: "In Progress", assignee: "Tom" },
 ]
+const menuItems = [
+  "Dashboard",
+  "Ticket Approval",
+  "My Ticket",
+  "Performance",
+]
 
 const getStatusBadge = (status : string) => {
   let base = "inline-block px-2 py-1 rounded text-xs font-medium"
@@ -58,7 +64,7 @@ export default function HelpdeskDashboard() {
    
         <aside className="w-64 bg-gray-100 min-h-screen p-4">
           <nav className="space-y-2">
-            {['Dashboard', 'Ticket Approval', 'My Ticket', 'Performance'].map((item, idx) => (
+            {menuItems.map((item, idx) => (
               <div key={item} className={`flex items-center gap-3 px-3 py-2 rounded ${item === 'My Ticket' ? 'bg-gray-200 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-200'}`}>
                 <div className={`w-4 h-4 rounded-sm ${item === 'My Ticket' ? 'bg-gray-600' : 'bg-gray-400'}`}></div>
                 <span>{item}</span>
